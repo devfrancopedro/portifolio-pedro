@@ -1,0 +1,114 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Configuração do sistema de design - Portfólio Pedro Franco */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 86.7%;
+    --input: 0 0% 86.7%;
+    --ring: 0 0% 0%;
+
+    --radius: 1rem;
+
+    /* Grid pattern colors */
+    --grid-color: 0 0% 86.7%;
+    --grid-opacity: 0.1;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+    background-image: 
+      linear-gradient(to right, hsl(var(--grid-color) / var(--grid-opacity)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--grid-color) / var(--grid-opacity)) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Grid pattern overlay */
+  .grid-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(to right, hsl(var(--grid-color) / var(--grid-opacity)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--grid-color) / var(--grid-opacity)) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+  }
+}
+
+@layer components {
+  .section-spacing {
+    @apply py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .card-custom {
+    @apply bg-card rounded-2xl shadow-sm border border-border/20 p-6 md:p-8;
+    transition: all 0.3s ease;
+  }
+
+  .card-custom:hover {
+    @apply shadow-md;
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:bg-secondary/80 hover:shadow-lg border border-border/20;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+}
