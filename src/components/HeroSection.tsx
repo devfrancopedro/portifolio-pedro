@@ -38,7 +38,7 @@ const HeroSection = () => {
               onClick={handleLinkedInClick}
               className="btn-primary flex items-center gap-3 w-full sm:w-auto group"
             >
-              <Linkedin size={20} />
+              <Linkedin size={20} className="text-blue-700" />
               <span>LinkedIn</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </button>

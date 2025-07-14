@@ -149,7 +149,7 @@ const ContactSection = () => {
                       </>
                     ) : (
                       <>
-                        <Send size={18} />
+                        <Send size={18} className="text-blue-700" />
                         Enviar Mensagem
                       </>
                     )}
