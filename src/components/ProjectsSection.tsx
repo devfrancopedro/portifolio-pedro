@@ -17,15 +17,31 @@ const ProjectsSection = () => {
       technologies: ["React", "Dashboard", "Finanças"],
       icon: Code,
       featured: false
+    },
+    {
+      title: "Em Andamento",
+      description: "para saber mais entre em contato",
+      technologies: [],
+      icon: Package,
+      featured: false
     }
   ];
 
   const projectImages: Record<string, string[]> = {
     "Organizador Financeiro": [
-      "/projeto_organizador/organizador.png",
+      "/projeto_organizador/organizador.jpeg",
       "/projeto_organizador/organizador-1.png",
       "/projeto_organizador/organizador-2.png",
     ],
+    "Gerenciamento de Ativos T.I": [
+      "/projeto_ti/cont_ti.png",
+      "/projeto_ti/cont_ti_1.png",
+      "/projeto_ti/cont_ti_2.png",
+      "/projeto_ti/cont_ti_3.png",
+      "/projeto_ti/cont_ti_4.png",
+      "/projeto_ti/cont_ti_5.png",
+    ],
+    "Em Andamento": [],
   };
 
   return (
@@ -59,14 +75,18 @@ const ProjectsSection = () => {
                 <div key={project.title} className={`card-custom group relative overflow-hidden animate-fade-in-scale ${project.featured ? 'md:col-span-1 lg:col-span-1' : ''}`} style={{ animationDelay: `${index * 0.1}s` }}>
                   {/* Carrossel de imagens */}
                   {images.length > 0 && (
-                    <div className="relative mb-6">
-                      <img src={images[current]} alt={project.title} className="rounded-xl w-full h-56 object-cover" />
-                      <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-1 shadow hover:bg-white transition" aria-label="Anterior">
-                        <span className="text-xl">&#8592;</span>
-                      </button>
-                      <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-1 shadow hover:bg-white transition" aria-label="Próxima">
-                        <span className="text-xl">&#8594;</span>
-                      </button>
+                    <div className="mb-4">
+                      <div className="flex justify-center items-center w-full h-[180px] md:h-[220px] lg:h-[260px]">
+                        <img src={images[current]} alt={project.title} className="rounded-xl max-h-full max-w-full object-contain shadow-md" />
+                      </div>
+                      <div className="flex justify-center gap-4 mt-2">
+                        <button onClick={prev} className="bg-white/80 rounded-full p-2 shadow hover:bg-white transition" aria-label="Anterior">
+                          <span className="text-xl">&#8592;</span>
+                        </button>
+                        <button onClick={next} className="bg-white/80 rounded-full p-2 shadow hover:bg-white transition" aria-label="Próxima">
+                          <span className="text-xl">&#8594;</span>
+                        </button>
+                      </div>
                     </div>
                   )}
                   {/* Project Icon */}
