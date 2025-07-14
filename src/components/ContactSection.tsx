@@ -57,7 +57,7 @@ const ContactSection = () => {
       icon: Mail,
       title: "E-mail",
       description: "Contato formal",
-      action: () => window.open("mailto:pedrofranco@email.com", "_blank"),
+      action: () => window.open("mailto:pedro.hs.franco19@gmail.com", "_blank"),
       color: "text-blue-600"
     },
     {
@@ -117,7 +117,7 @@ const ContactSection = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                      placeholder="seu.email@exemplo.com"
+                      placeholder="pedro.hs.franco19@gmail.com"
                     />
                   </div>
 

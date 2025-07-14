@@ -57,6 +57,14 @@ const AboutSection = () => {
                   estou pronto para somar ao seu time.
                 </p>
               </div>
+              <div className="mt-6">
+                <a
+                  href="mailto:pedro.hs.franco19@gmail.com"
+                  className="btn-primary inline-flex items-center gap-2"
+                >
+                  Enviar E-mail
+                </a>
+              </div>
             </div>
 
             {/* Highlights Grid */}
