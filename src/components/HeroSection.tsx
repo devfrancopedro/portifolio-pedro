@@ -27,7 +27,7 @@ const HeroSection = () => {
               <span className="text-2xl">💡</span>
               <p>
                 Com mais de <strong className="text-foreground">1.000 chamados resolvidos</strong> e{" "}
-                <strong className="text-foreground">300h de atendimento técnico</strong>, entrego soluções que realmente fazem a diferença.
+                <strong className="text-foreground">300h+ de atendimento técnico comprovados</strong>, entrego soluções que realmente fazem a diferença.
               </p>
             </div>
           </div>
@@ -60,7 +60,7 @@ const HeroSection = () => {
               <div className="text-muted-foreground">Chamados Resolvidos</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">300h</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">300h+</div>
               <div className="text-muted-foreground">Atendimento Técnico</div>
             </div>
             <div className="text-center">

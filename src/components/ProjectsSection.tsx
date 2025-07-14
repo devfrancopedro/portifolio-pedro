@@ -4,24 +4,17 @@ import { ExternalLink, Code, Cpu, Package } from "lucide-react";
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Sistema de Chamados com IA",
-      description: "Otimização de tempo com automações em atendimento técnico.",
-      technologies: ["IA", "Automação", "Web App"],
+      title: "Gerenciamento de Ativos T.I",
+      description: "Sistema completo com controle de equipamentos, chamados com IA e gestão de estoque inteligente.",
+      technologies: ["IA", "Web App", "Dashboard", "Automação"],
       icon: Cpu,
       featured: true
     },
     {
-      title: "Gestor de Ativos de T.I Web",
-      description: "Controle e rastreamento de equipamentos com integração em nuvem.",
-      technologies: ["Web App", "Cloud", "Dashboard"],
+      title: "Organizador Financeiro",
+      description: "App que organiza gastos futuros e investimentos pessoais.",
+      technologies: ["React", "Dashboard", "Finanças"],
       icon: Code,
-      featured: true
-    },
-    {
-      title: "Estoque Inteligente",
-      description: "Sistema com alertas automáticos para reposição e movimentação de itens.",
-      technologies: ["Lovable", "Automação", "Alertas"],
-      icon: Package,
       featured: false
     }
   ];

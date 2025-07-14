@@ -1,5 +1,5 @@
 
-import { Code, Users, Zap, Award } from "lucide-react";
+import { Code, Users, Lightbulb, Award } from "lucide-react";
 
 const AboutSection = () => {
   const highlights = [
@@ -14,7 +14,7 @@ const AboutSection = () => {
       description: "Excelência no suporte técnico e relacionamento com clientes"
     },
     {
-      icon: Zap,
+      icon: Lightbulb,
       title: "Inovação",
       description: "Implementação de soluções com IA e ferramentas avançadas"
     },
@@ -40,18 +40,21 @@ const AboutSection = () => {
             <div className="animate-slide-in-left">
               <div className="card-custom">
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Profissional com experiência prática em <strong className="text-foreground">suporte técnico</strong>, 
-                  <strong className="text-foreground"> desenvolvimento de sistemas</strong> e 
-                  <strong className="text-foreground"> atendimento ao cliente</strong>. 
+                  Profissional de T.I com foco em <strong className="text-foreground">resultados</strong>, 
+                  <strong className="text-foreground">inovação</strong> e <strong className="text-foreground">excelência</strong>.
+                  Atuo com suporte técnico, desenvolvimento de sistemas e atendimento ao cliente, sempre buscando entregar soluções práticas e eficientes.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground mt-4">
-                  Já atuei em empresas como <strong className="text-foreground">HUB Móveis Brasília</strong> e 
-                  <strong className="text-foreground"> Terasoft</strong>, sempre com foco em excelência, 
-                  agilidade e inovação.
+                  Tive a oportunidade de trabalhar em empresas como <strong className="text-foreground">Móveis Brasília</strong>, 
+                  prestando suporte direto ao sistema ERP Terasoft.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground mt-4">
-                  Desenvolvo soluções internas, automações e plataformas web usando ferramentas modernas, 
-                  incluindo <strong className="text-foreground">IA</strong>.
+                  Além da atuação operacional, crio e implemento soluções internas e plataformas web, utilizando tecnologias modernas, 
+                  incluindo <strong className="text-foreground">inteligência artificial</strong>, para automatizar rotinas, melhorar o controle de ativos e otimizar processos.
+                </p>
+                <p className="text-lg leading-relaxed text-muted-foreground mt-4">
+                  Se você busca um profissional que alia conhecimento técnico, visão prática e iniciativa para resolver problemas reais, 
+                  estou pronto para somar ao seu time.
                 </p>
               </div>
             </div>

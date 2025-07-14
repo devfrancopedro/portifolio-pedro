@@ -4,43 +4,41 @@ import { Calendar, MapPin, Briefcase } from "lucide-react";
 const ExperienceSection = () => {
   const experiences = [
     {
-      company: "HUB Móveis Brasília",
+      company: "Móveis Brasília",
       position: "Suporte N2",
-      period: "2023 - 2024",
-      location: "Brasília, DF",
+      period: "2024 - 2025",
+      location: "Londrina, PR",
       highlights: [
-        "Migração completa de sistema ERP",
-        "Gestão de ativos de T.I",
-        "Suporte técnico especializado N2",
-        "Treinamento de equipes"
+        "Migração e ajuda na implantação sistema ERP",
+        "Suporte especializado N2",
+        "Treinamento de pessoas novas",
+        "Sistema Terasoft ERP"
       ],
       type: "Experiência Principal"
     },
     {
-      company: "Terasoft",
+      company: "Til Transportes",
       position: "Atendimento Técnico",
-      period: "2022 - 2023",
-      location: "Remoto",
+      period: "2023 - 2024",
+      location: "Londrina, PR",
       highlights: [
-        "Atendimento técnico especializado",
-        "Automação de processos internos",
-        "Resolução de incidentes críticos",
-        "Documentação técnica"
+        "Suporte infraestrutura",
+        "Manutenção de hardware",
+        "Resolução de incidentes críticos"
       ],
       type: "Experiência Técnica"
     },
     {
-      company: "Projetos Próprios",
-      position: "Desenvolvedor & Analista",
-      period: "2022 - Atual",
-      location: "Freelancer",
+      company: "Móveis Brasília",
+      position: "Atendimento Técnico",
+      period: "2021 - 2022",
+      location: "Londrina, PR",
       highlights: [
-        "Desenvolvimento Web com IA",
-        "Sistemas de automação",
-        "Consultoria em T.I",
-        "Soluções personalizadas"
+        "Suporte técnico aos colaboradores",
+        "Alimentação de um Wiki interno",
+        "Manutenção de hardwares"
       ],
-      type: "Projetos Independentes"
+      type: "Experiência Técnica"
     }
   ];
 
@@ -135,7 +133,7 @@ const ExperienceSection = () => {
               <div className="text-muted-foreground">Experiência Consolidada</div>
             </div>
             <div className="card-custom text-center">
-              <div className="text-2xl font-bold text-primary mb-2">3 Empresas</div>
+              <div className="text-2xl font-bold text-primary mb-2">2 Empresas</div>
               <div className="text-muted-foreground">Diferentes Segmentos</div>
             </div>
           </div>
