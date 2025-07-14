@@ -5,6 +5,7 @@ const MyStacksSection = () => {
     { name: "IA", icon: Brain },
     { name: "Lovable", icon: null, logo: "https://lovable.dev/favicon.ico" },
     { name: "Cursor", icon: null, logo: "https://img.utdstc.com/icon/a2c/de1/a2cde158af82ba714c9c50acfb13b930312e231596805f4a1a9d7ec6d8059dba:200" },
+    { name: "Supabase", icon: null, logo: "https://app.supabase.com/img/supabase-logo-icon.png" },
     { name: "Git", icon: GitBranch },
     { name: "GitHub", icon: Github }
   ];

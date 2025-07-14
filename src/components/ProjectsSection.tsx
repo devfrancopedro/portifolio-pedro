@@ -1,5 +1,6 @@
 
 import { ExternalLink, Code, Cpu, Package } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const ProjectsSection = () => {
   const projects = [
@@ -19,6 +20,14 @@ const ProjectsSection = () => {
     }
   ];
 
+  const projectImages: Record<string, string[]> = {
+    "Organizador Financeiro": [
+      "/projeto_organizador/organizador.png",
+      "/projeto_organizador/organizador-1.png",
+      "/projeto_organizador/organizador-2.png",
+    ],
+  };
+
   return (
     <section id="projects" className="section-spacing">
       <div className="container-custom">
@@ -34,54 +43,65 @@ const ProjectsSection = () => {
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div 
-                key={project.title}
-                className={`card-custom group relative overflow-hidden animate-fade-in-scale ${
-                  project.featured ? 'md:col-span-1 lg:col-span-1' : ''
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Project Icon */}
-                <div className="flex items-center justify-center w-14 h-14 bg-primary/10 rounded-xl mb-6 group-hover:bg-primary/20 transition-all duration-300">
-                  <project.icon className="w-7 h-7 text-primary" />
-                </div>
-
-                {/* Content */}
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech) => (
-                    <span 
-                      key={tech}
-                      className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Action Button */}
-                <button className="flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all duration-300 group-hover:text-primary/80">
-                  Ver mais detalhes
-                  <ExternalLink size={16} />
-                </button>
-
-                {/* Featured Badge */}
-                {project.featured && (
-                  <div className="absolute top-4 right-4 px-2 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
-                    Destaque
+            {projects.map((project, index) => {
+              const images = projectImages[project.title] || [];
+              const [current, setCurrent] = useState(0);
+              useEffect(() => {
+                if (images.length === 0) return;
+                const interval = setInterval(() => {
+                  setCurrent((prev) => (prev + 1) % images.length);
+                }, 3500);
+                return () => clearInterval(interval);
+              }, [images.length]);
+              const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
+              const next = () => setCurrent((prev) => (prev + 1) % images.length);
+              return (
+                <div key={project.title} className={`card-custom group relative overflow-hidden animate-fade-in-scale ${project.featured ? 'md:col-span-1 lg:col-span-1' : ''}`} style={{ animationDelay: `${index * 0.1}s` }}>
+                  {/* Carrossel de imagens */}
+                  {images.length > 0 && (
+                    <div className="relative mb-6">
+                      <img src={images[current]} alt={project.title} className="rounded-xl w-full h-56 object-cover" />
+                      <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-1 shadow hover:bg-white transition" aria-label="Anterior">
+                        <span className="text-xl">&#8592;</span>
+                      </button>
+                      <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-1 shadow hover:bg-white transition" aria-label="Próxima">
+                        <span className="text-xl">&#8594;</span>
+                      </button>
+                    </div>
+                  )}
+                  {/* Project Icon */}
+                  <div className="flex items-center justify-center w-14 h-14 bg-primary/10 rounded-xl mb-6 group-hover:bg-primary/20 transition-all duration-300">
+                    <project.icon className="w-7 h-7 text-primary" />
                   </div>
-                )}
-              </div>
-            ))}
+                  {/* Content */}
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full font-medium">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  {/* Action Button */}
+                  <button className="flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all duration-300 group-hover:text-primary/80">
+                    Ver mais detalhes
+                    <ExternalLink size={16} />
+                  </button>
+                  {/* Featured Badge */}
+                  {project.featured && (
+                    <div className="absolute top-4 right-4 px-2 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
+                      Destaque
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Call to Action */}
