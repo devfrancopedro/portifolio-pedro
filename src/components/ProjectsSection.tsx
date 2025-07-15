@@ -9,14 +9,16 @@ const ProjectsSection = () => {
       description: "Sistema completo com controle de equipamentos, chamados com IA e gestão de estoque inteligente.",
       technologies: ["IA", "Web App", "Dashboard", "Automação"],
       icon: Cpu,
-      featured: true
+      featured: true,
+      link: "https://ativos-ti.vercel.app/"
     },
     {
       title: "Organizador Financeiro",
       description: "App que organiza gastos futuros e investimentos pessoais.",
       technologies: ["React", "Dashboard", "Finanças"],
       icon: Code,
-      featured: false
+      featured: false,
+      link: "https://organizador-delta.vercel.app/"
     },
     {
       title: "Em Andamento",
@@ -71,6 +73,48 @@ const ProjectsSection = () => {
               }, [images.length]);
               const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
               const next = () => setCurrent((prev) => (prev + 1) % images.length);
+              // Customização para o projeto 'Em Andamento'
+              if (project.title === "Em Andamento") {
+                return (
+                  <div key={project.title} className={`card-custom group relative overflow-hidden animate-fade-in-scale`} style={{ animationDelay: `${index * 0.1}s` }}>
+                    {/* Imagem ilustrativa de desenvolvimento */}
+                    <div className="mb-4 flex justify-center items-center w-full h-[180px] md:h-[220px] lg:h-[260px]">
+                      <img
+                        src="https://img.freepik.com/vetores-premium/veiculo-basculante-de-construcao-e-guindaste-no-design-de-ilustracao-vetorial-de-local-de-trabalho_24908-65161.jpg"
+                        alt="Projeto em desenvolvimento"
+                        className="rounded-xl max-h-full max-w-full object-contain shadow-md"
+                      />
+                    </div>
+                    {/* Project Icon */}
+                    <div className="flex items-center justify-center w-14 h-14 bg-primary/10 rounded-xl mb-6 group-hover:bg-primary/20 transition-all duration-300">
+                      <project.icon className="w-7 h-7 text-primary" />
+                    </div>
+                    {/* Content */}
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.technologies.map((tech) => (
+                        <span key={tech} className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full font-medium">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    {/* Botão de contato */}
+                    <button
+                      className="btn-primary w-full mt-2"
+                      onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                      Entrar em contato
+                    </button>
+                  </div>
+                );
+              }
+              // Para os outros projetos, botão com link externo
               return (
                 <div key={project.title} className={`card-custom group relative overflow-hidden animate-fade-in-scale ${project.featured ? 'md:col-span-1 lg:col-span-1' : ''}`} style={{ animationDelay: `${index * 0.1}s` }}>
                   {/* Carrossel de imagens */}
@@ -108,11 +152,18 @@ const ProjectsSection = () => {
                       </span>
                     ))}
                   </div>
-                  {/* Action Button */}
-                  <button className="flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all duration-300 group-hover:text-primary/80">
-                    Ver mais detalhes
-                    <ExternalLink size={16} />
-                  </button>
+                  {/* Action Button com link externo */}
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all duration-300 group-hover:text-primary/80"
+                    >
+                      Ver mais detalhes
+                      <ExternalLink size={16} />
+                    </a>
+                  )}
                   {/* Featured Badge */}
                   {project.featured && (
                     <div className="absolute top-4 right-4 px-2 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
